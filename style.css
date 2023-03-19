@@ -43,12 +43,21 @@ nav {
     max-width: 100%;
 }
 
+.search:hover path {
+    fill: #F16D7F;
+}
+
+.search:hover {
+    cursor: pointer;
+}
+
 .left_menu {
     display: flex;
     flex-wrap: wrap;
     gap: 41px;
     margin-bottom: 19px;
     margin-top: 18px;
+    align-items: center;
 }
 
 .right_menu {
@@ -68,27 +77,47 @@ nav {
     cursor: pointer;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+.menu_svg:hover path {
+    fill: #F16D7F;
 }
+
+.accaunt:hover path {
+    fill: #F16D7F;
+}
+
+.accaunt:hover {
+    cursor:pointer;
+}
+
+.korzina:hover path {
+    fill: #F16D7F;
+}
+
+.korzina:hover {
+    cursor:pointer;
+}
+
+.menu_checkbox {
+    position: absolute;
+    visibility: hidden;
+    left: -9999999px;
+  }
 
 .dropdown_content {
-    display: none;
     position: absolute;
+    top: 75px;
+    right: -232px;
+    z-index: 1;
+    transition: right 0.6s;
+    width: 232px;
     background: #FFFFFF;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-    z-index: 1;
-    padding-top: 32px;
-    padding-left: 33px;
-    padding-right: 99.1px;
-    padding-bottom: 32px;
-    /* top: 49px; */
-    width: 126px;
-}
+    padding: 32px;
+    box-sizing: border-box;
+  }
 
-.dropdown:hover .dropdown_content {
-    display: block;
+.menu_checkbox:checked~.dropdown_content {
+    right: 0;
 }
 
 .dropdown_name {
@@ -192,6 +221,14 @@ h1 {
 
 .s {
     width: 100%;
+}
+
+.it:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.mobile {
+    display:none;
 }
 
 .t {
@@ -369,7 +406,7 @@ h3 {
 .advantages {
     background: #222224;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -417,7 +454,6 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 97px;
-    padding-left: 230px;
     padding-bottom: 156px;
     gap: 327px;
     background-repeat: no-repeat;
@@ -547,17 +583,12 @@ footer {
     gap: 7.29px;
 }
 
-.facebook, .instagram, .pinterest, .twitter:hover .sm_logo {
-    fill:#FFFFFF;
-}
-
-.facebook:hover {
+.soc_log:hover {
     background: #F16D7F;
 }
 
-.facebook:hover .sm_logo {
-    background: #F16D7F;
-    fill:#FFFFFF;
+.soc_log:hover path{
+    fill: #FFFFFF;
 }
 
 @media(max-width:1025px)  {
@@ -590,6 +621,21 @@ footer {
     gap:40px;
 }
 
+.dropdown_content {
+    display: none;
+  }
+
+.menu_checkbox:checked~.dropdown_content {
+    display: block;
+
+}
+
+}
+
+@media(max-width:957px){
+.advantages {
+    flex-wrap: wrap;
+}
 }
 
 @media(max-width:768px){
@@ -687,6 +733,14 @@ footer {
 
     footer {
         width: 374px;
+    }
+
+    .full {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
     }
 
 }
